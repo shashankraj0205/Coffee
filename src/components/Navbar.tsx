@@ -118,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             : 'bg-white/70 backdrop-blur-md border-b border-[#144734]/[0.06] py-3.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-2.5">
             {/* Brand + Live Hours Pill */}
             <div className="flex items-center gap-2.5 min-w-0">
