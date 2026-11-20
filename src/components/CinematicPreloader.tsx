@@ -23,7 +23,8 @@ export const CinematicPreloader: React.FC = () => {
     const start = performance.now();
 
     const tick = (now: number) => {
-      const pct = Math.min(100, Math.round(((now - start) / duration) * 100));
+      // rAF's timestamp can precede `start`, which made the first frame negative.
+      const pct = Math.max(0, Math.min(100, Math.round(((now - start) / duration) * 100)));
       setProgress(pct);
       if (pct < 100) {
         raf = requestAnimationFrame(tick);
