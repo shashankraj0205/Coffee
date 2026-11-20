@@ -707,7 +707,12 @@ app.post('/api/orders', (req, res) => {
   }
 
   const orderId = `ord-${crypto.randomUUID().slice(0, 8)}`;
-  const orderNumber = `CKP-${Math.floor(1050 + Math.random() * 8800)}`;
+  // order_number is UNIQUE; re-roll on collision instead of failing the order.
+  // shortcut: loops forever once all ~8800 numbers are taken, widen the range before then.
+  let orderNumber;
+  do {
+    orderNumber = `CKP-${Math.floor(1050 + Math.random() * 8800)}`;
+  } while (db.prepare('SELECT 1 FROM orders WHERE order_number = ?').get(orderNumber));
   const now = new Date().toISOString();
   const isRazorpay = String(paymentMethod).startsWith('razorpay');
   const gatewayMode =
