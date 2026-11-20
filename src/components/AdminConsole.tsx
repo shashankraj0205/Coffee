@@ -147,7 +147,8 @@ export const AdminConsole: React.FC<AdminConsoleProps> = ({
   const [loginEmail, setLoginEmail] = useState(
     () => getSavedLocalAdminInfo().username || 'admin'
   );
-  const [loginPassword, setLoginPassword] = useState('chai2026');
+  // Demo credentials are only prefilled/shown in dev builds, never on a public deploy.
+  const [loginPassword, setLoginPassword] = useState(import.meta.env.DEV ? 'chai2026' : '');
   const [loginError, setLoginError] = useState<string | null>(null);
   const [loggingIn, setLoggingIn] = useState(false);
 
@@ -472,6 +473,7 @@ export const AdminConsole: React.FC<AdminConsoleProps> = ({
                     </button>
                   </form>
 
+                  {import.meta.env.DEV && (
                   <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] text-xs space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[10px] uppercase tracking-wider text-[#D68C58]">
@@ -493,6 +495,7 @@ export const AdminConsole: React.FC<AdminConsoleProps> = ({
                       Username: {getSavedLocalAdminInfo().username} (or {getSavedLocalAdminInfo().email}) · chai2026
                     </p>
                   </div>
+                  )}
                 </div>
               </div>
             ) : (

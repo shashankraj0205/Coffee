@@ -17,6 +17,11 @@ const TOKEN_SECRET =
   process.env.SOLEN_ADMIN_SECRET ||
   'kulhad-kaapi-hmac-secret-2026-dev-key';
 
+// A well-known fallback secret lets anyone forge admin tokens, so refuse it in production.
+if (process.env.NODE_ENV === 'production' && TOKEN_SECRET === 'kulhad-kaapi-hmac-secret-2026-dev-key') {
+  throw new Error('Set AUTH_TOKEN_SECRET before running in production.');
+}
+
 export function hashPassword(
   password,
   salt = crypto.randomBytes(16).toString('hex')
