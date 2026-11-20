@@ -367,7 +367,9 @@ app.post('/api/auth/forgot-password', (req, res) => {
   return res.json({
     ok: true,
     message: 'Reset code generated (configure SMTP in .env for email delivery).',
-    devResetCode: process.env.SMTP_HOST ? undefined : resetCode,
+    // Returning the code lets anyone reset any account, so it is dev-only.
+    // shortcut: no email delivery is wired up yet, so in production resets can't complete until it is.
+    devResetCode: process.env.NODE_ENV === 'production' ? undefined : resetCode,
   });
 });
 
