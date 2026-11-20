@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="t d">
+  <title id="t">Kulhad &amp; Kaapi</title>
+  <desc id="d">Animated banner: a steaming terracotta kulhad cup beside the title Kulhad and Kaapi, with a rotating tagline.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBF6EC"/>
+      <stop offset="1" stop-color="#F1E3CC"/>
+    </linearGradient>
+    <linearGradient id="cup" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D9783A"/>
+      <stop offset="1" stop-color="#A9501F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#F3B563" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#F3B563" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="round"><rect width="1200" height="420" rx="28"/></clipPath>
+  </defs>
+
+  <style>
+    .title   { font: 700 84px Georgia, 'Times New Roman', serif; fill: #144734; letter-spacing: -1px; }
+    .amp     { fill: #C87D28; }
+    .hindi   { font: 600 34px 'Nirmala UI', 'Noto Sans Devanagari', 'Mangal', sans-serif; fill: #C87D28; letter-spacing: 2px; }
+    .tag     { font: 500 24px 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif; fill: #3C4F46; }
+    .chip    { font: 600 15px 'Segoe UI', system-ui, Helvetica, Arial, sans-serif; fill: #144734; letter-spacing: .6px; }
+
+    .rise  { opacity: 0; animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+    .d1 { animation-delay: .15s } .d2 { animation-delay: .35s } .d3 { animation-delay: .55s } .d4 { animation-delay: .75s }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: translateY(0) } }
+
+    .steam { fill: none; stroke: #C9A77C; stroke-width: 7; stroke-linecap: round; opacity: 0; transform-box: fill-box; transform-origin: 50% 100%;
+             animation: steam 3.6s ease-in-out infinite; }
+    .s2 { animation-delay: 1.2s } .s3 { animation-delay: 2.4s }
+    @keyframes steam {
+      0%   { opacity: 0;   transform: translateY(14px) scaleY(.8) }
+      30%  { opacity: .85 }
+      100% { opacity: 0;   transform: translateY(-34px) scaleY(1.15) }
+    }
+
+    .cupfloat { animation: bob 5s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+    @keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+
+    .glow { animation: pulse 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes pulse { 0%,100% { opacity: .75; transform: scale(1) } 50% { opacity: 1; transform: scale(1.08) } }
+
+    .pod { fill: #7A8F5B; opacity: .0; animation: drift 9s linear infinite; }
+    .p2 { animation-delay: 3s; fill: #C87D28 } .p3 { animation-delay: 6s }
+    @keyframes drift {
+      0%   { opacity: 0;  transform: translate(0,0) rotate(0) }
+      15%  { opacity: .7 }
+      100% { opacity: 0;  transform: translate(60px,-150px) rotate(220deg) }
+    }
+
+    .line { opacity: 0; animation: cycle 12s infinite; }
+    .l2 { animation-delay: 4s } .l3 { animation-delay: 8s }
+    @keyframes cycle { 0% { opacity: 0; transform: translateY(8px) } 5%,30% { opacity: 1; transform: translateY(0) } 36%,100% { opacity: 0; transform: translateY(-8px) } }
+
+    .underline { stroke: #C87D28; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 340; stroke-dashoffset: 340; animation: draw 1.2s .9s ease-out forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .steam, .cupfloat, .glow, .pod, .line, .underline { animation: none !important; opacity: 1; stroke-dashoffset: 0; }
+      .steam, .pod, .l2, .l3 { opacity: 0; }
+    }
+  </style>
+
+  <g clip-path="url(#round)">
+    <rect width="1200" height="420" fill="url(#bg)"/>
+
+    <!-- soft ornament circles -->
+    <circle cx="1090" cy="60" r="150" fill="#144734" opacity=".05"/>
+    <circle cx="1140" cy="380" r="110" fill="#C87D28" opacity=".08"/>
+    <circle cx="60" cy="400" r="120" fill="#144734" opacity=".05"/>
+
+    <!-- floating cardamom pods -->
+    <ellipse class="pod"    cx="520" cy="360" rx="7" ry="11"/>
+    <ellipse class="pod p2" cx="820" cy="372" rx="6" ry="10"/>
+    <ellipse class="pod p3" cx="1000" cy="352" rx="7" ry="11"/>
+
+    <!-- kulhad cup -->
+    <g transform="translate(150 70)">
+      <ellipse class="glow" cx="100" cy="150" rx="150" ry="140" fill="url(#glow)"/>
+      <g>
+        <path class="steam"    d="M70 70 C 50 40, 90 20, 70 -10"/>
+        <path class="steam s2" d="M100 64 C 80 34, 120 14, 100 -16"/>
+        <path class="steam s3" d="M130 70 C 110 40, 150 20, 130 -10"/>
+      </g>
+      <g class="cupfloat">
+        <ellipse cx="100" cy="262" rx="78" ry="12" fill="#144734" opacity=".12"/>
+        <path d="M32 96 H168 L150 250 Q148 262 136 262 H64 Q52 262 50 250 Z" fill="url(#cup)"/>
+        <ellipse cx="100" cy="96" rx="68" ry="15" fill="#8A3F17"/>
+        <ellipse cx="100" cy="98" rx="60" ry="11" fill="#5B2E14"/>
+        <ellipse cx="100" cy="97" rx="38" ry="5" fill="#C98B4E" opacity=".75"/>
+        <path d="M44 150 H156" stroke="#7E3A15" stroke-width="3" opacity=".55"/>
+        <path d="M48 190 H152" stroke="#7E3A15" stroke-width="3" opacity=".55"/>
+        <path d="M40 118 Q38 170 52 232" stroke="#F4B77F" stroke-width="5" stroke-linecap="round" fill="none" opacity=".45"/>
+      </g>
+    </g>
+
+    <!-- text -->
+    <g transform="translate(400 0)">
+      <text class="hindi rise d1" x="0" y="118">चाय · कॉफी</text>
+      <text class="title rise d2" x="0" y="205">Kulhad <tspan class="amp">&amp;</tspan> Kaapi</text>
+      <path class="underline" d="M2 230 H340"/>
+
+      <g class="rise d3">
+        <text class="tag line"    x="0" y="282">Full-stack Indian chai &amp; coffee platform</text>
+        <text class="tag line l2" x="0" y="282">Storefront · live kitchen display · admin studio</text>
+        <text class="tag line l3" x="0" y="282">12 chais · 10 coffees · brewed to order</text>
+      </g>
+
+      <g transform="translate(0 318)"><g class="rise d4">
+        <rect width="102" height="34" rx="17" fill="#144734" opacity=".09"/>
+        <text class="chip" x="51" y="22" text-anchor="middle">React 19</text>
+        <rect x="114" width="102" height="34" rx="17" fill="#144734" opacity=".09"/>
+        <text class="chip" x="165" y="22" text-anchor="middle">Express 5</text>
+        <rect x="228" width="102" height="34" rx="17" fill="#144734" opacity=".09"/>
+        <text class="chip" x="279" y="22" text-anchor="middle">SQLite</text>
+        <rect x="342" width="116" height="34" rx="17" fill="#144734" opacity=".09"/>
+        <text class="chip" x="400" y="22" text-anchor="middle">Tailwind v4</text>
+      </g></g>
+    </g>
+  </g>
+</svg>
