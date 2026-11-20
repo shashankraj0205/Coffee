@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
 
               <div
-                className={`hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-medium whitespace-nowrap ${
+                className={`hidden 2xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[11px] font-medium whitespace-nowrap ${
                   shopStatus.isOpen
                     ? 'bg-[#EAF3EE] border-[#144734]/18 text-[#144734]'
                     : 'bg-rose-50 border-rose-200 text-rose-800'
@@ -163,7 +163,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Center Links with Animated Underline */}
             <nav
               aria-label="Primary"
-              className="hidden lg:flex items-center gap-1 rounded-full px-2 py-1 bg-[#F4F7F5] border border-[#144734]/10"
+              className="hidden xl:flex items-center gap-1 rounded-full px-2 py-1 bg-[#F4F7F5] border border-[#144734]/10"
             >
               {navLinks.map((item) => {
                 const isActive = activeHash === item.href;
@@ -171,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <a
                     key={item.href}
                     href={item.href}
-                    className={`relative px-3.5 py-1.5 text-xs xl:text-sm font-medium rounded-full transition-colors whitespace-nowrap ${
+                    className={`relative px-3.5 py-1.5 text-sm font-medium rounded-full transition-colors whitespace-nowrap ${
                       isActive
                         ? 'text-[#144734] font-semibold bg-white shadow-2xs'
                         : 'text-[#52635B] hover:text-[#144734]'
@@ -244,7 +244,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="relative inline-flex items-center gap-1.5 px-3 h-9 rounded-full border bg-white border-[#144734]/14 text-[#144734] hover:border-[#C87D28] hover:bg-[#F8F4EC] text-xs font-semibold transition-all cursor-pointer"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-[#C87D28]" />
-                <span className="hidden xl:inline">Admin</span>
+                <span className="hidden 2xl:inline">Admin</span>
                 {adminUser && unreadAdmin > 0 && (
                   <span className="w-2 h-2 rounded-full bg-rose-500" />
                 )}
@@ -277,7 +277,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 type="button"
                 onClick={() => setMobileOpen((prev) => !prev)}
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                className="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-full border bg-white border-[#144734]/14 text-[#15241E] cursor-pointer"
+                className="xl:hidden inline-flex items-center justify-center w-9 h-9 rounded-full border bg-white border-[#144734]/14 text-[#15241E] cursor-pointer"
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -294,7 +294,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: SOLEN_EASE }}
-            className="lg:hidden overflow-hidden border-t backdrop-blur-xl border-[#144734]/12 bg-white/98 text-[#15241E] shadow-xl"
+            className="xl:hidden overflow-hidden border-t backdrop-blur-xl border-[#144734]/12 bg-white/98 text-[#15241E] shadow-xl"
           >
             <div className="px-5 pt-4 pb-6 space-y-3">
               <div className="flex items-center justify-between px-4 py-2.5 rounded-2xl text-xs font-medium bg-[#F1F6F3] text-[#144734]">
