@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Shantell Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Shantell Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Shantell Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-devanagari: "Noto Sans Devanagari", "Shantell Sans", sans-serif;
+
+  /* Airy, Luminous Luxury Light Tea & Coffee Palette */
+  --color-pearl: #FFFFFF;
+  --color-alabaster: #FCFAF7;
+  --color-sagemist: #F1F6F3;
+  --color-champagne: #F8F4EC;
+  --color-emerald: #144734;
+  --color-emerald-hover: #0F3829;
+  --color-saffron: #C87D28;
+  --color-gold: #D49B45;
+  --color-ink: #15241E;
+  --color-muted: #52635B;
+}
+
+@layer base {
+  html, body {
+    font-family: "Shantell Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-variation-settings: "BNCE" 0, "INFM" 0, "SPAC" 0;
+    font-style: normal;
+    background-color: #FCFAF7;
+    color: #15241E;
+    scroll-padding-top: 5.5rem;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display, .font-serif, .font-sans, .font-mono {
+    font-family: "Shantell Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-variation-settings: "BNCE" 0, "INFM" 0, "SPAC" 0;
+    font-style: normal;
+  }
+
+  /* Keep typography simple and clean — disable decorative italics */
+  .italic {
+    font-style: normal;
+  }
+}
+
+.font-devanagari {
+  font-family: "Noto Sans Devanagari", "Shantell Sans", sans-serif;
+  font-style: normal;
+}
+
+/* Crisp frosted white navbar & floating cards */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(20, 71, 52, 0.1);
+}
+
+/* Sunlit Hero Gradient — pure airy pearl + whisper of botanical sage & champagne */
+.sunlit-hero-bg {
+  background:
+    radial-gradient(55% 55% at 12% 14%, rgba(20, 71, 52, 0.06) 0%, transparent 68%),
+    radial-gradient(50% 48% at 88% 20%, rgba(212, 155, 69, 0.1) 0%, transparent 68%),
+    linear-gradient(180deg, #FFFFFF 0%, #FCFAF7 100%);
+}
+
+/* Subtle dot texture on light sage-porcelain menu canvas */
+.indian-jaali-bg {
+  background-color: #F6F8F6;
+  background-image: radial-gradient(rgba(20, 71, 52, 0.075) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #15241E;
+}
+
+.indian-warm-surface {
+  background-color: #FCFAF7;
+  color: #15241E;
+}
+
+/* Light Sage-Mint Club Surface */
+.indian-sage-surface {
+  background:
+    radial-gradient(55% 60% at 15% 15%, rgba(212, 155, 69, 0.09) 0%, transparent 65%),
+    linear-gradient(180deg, #F1F6F3 0%, #EAF2ED 100%);
+  color: #15241E;
+}
+
+/* Delicate Gold & Emerald Decorative Rule */
+.brass-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(20, 71, 52, 0.16) 25%,
+    rgba(200, 125, 40, 0.38) 50%,
+    rgba(20, 71, 52, 0.16) 75%,
+    transparent 100%
+  );
+}
+
+/* Semantic Light Surfaces across all components */
+.cafe-surface-warm {
+  background-color: #FFFFFF;
+  color: #15241E;
+}
+.cafe-surface-cream {
+  background-color: #F4F7F5;
+  color: #15241E;
+}
+.cafe-card {
+  background-color: #FFFFFF;
+  border-color: rgba(20, 71, 52, 0.1);
+  color: #15241E;
+}
+.cafe-card-alt {
+  background-color: #F5F8F6;
+  border-color: rgba(20, 71, 52, 0.1);
+  color: #15241E;
+}
+.cafe-heading {
+  color: #15241E;
+}
+.cafe-muted {
+  color: #52635B;
+}
+.cafe-input {
+  background-color: #FFFFFF;
+  border-color: rgba(20, 71, 52, 0.16);
+  color: #15241E;
+}
+
+/* Rising steam plume animation */
+@keyframes steamRise {
+  0% {
+    transform: translateY(12px) translateX(0px) scaleX(0.85);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.45;
+  }
+  55% {
+    transform: translateY(-44px) translateX(9px) scaleX(1.16);
+    opacity: 0.28;
+  }
+  100% {
+    transform: translateY(-110px) translateX(-7px) scaleX(1.5);
+    opacity: 0;
+  }
+}
+
+.steam-plume {
+  animation: steamRise 4.8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+.steam-plume-delayed {
+  animation: steamRise 5.6s ease-in-out 1.4s infinite;
+  will-change: transform, opacity;
+}
+.steam-plume-slow {
+  animation: steamRise 6.4s ease-in-out 2.6s infinite;
+  will-change: transform, opacity;
+}
+
+/* Smooth infinite marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marqueeReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  animation: marquee 34s linear infinite;
+}
+.animate-marquee-slow {
+  animation: marquee 48s linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marqueeReverse 52s linear infinite;
+}
+.animate-marquee:hover,
+.animate-marquee-slow:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Clean light range input for Rewards Calculator */
+input[type="range"].solen-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(20, 71, 52, 0.14);
+  outline: none;
+}
+
+input[type="range"].solen-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #144734;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(20, 71, 52, 0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+input[type="range"].solen-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+  box-shadow: 0 4px 14px rgba(20, 71, 52, 0.35);
+}
+
+input[type="range"].solen-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #144734;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(20, 71, 52, 0.22);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-ready a,
+  body.custom-cursor-ready button {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-slow,
+  .animate-marquee-reverse,
+  .steam-plume,
+  .steam-plume-delayed,
+  .steam-plume-slow {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,553 @@
+{
+  "admin": {
+    "email": "admin@solen.cafe",
+    "name": "Head Roaster Admin",
+    "role": "owner",
+    "passwordHash": "407b0b91f47d8a9df57f3c6dbf9ae5f4:91841ef8fe096757339cfe3412a7b14e138c337d39576929f6b6e62bc02f1040a2f9210a52989ae4dc27a65e8adb314364882698e9fa9955e9d0ba97e19db128"
+  },
+  "store": {
+    "brand": {
+      "name": "Solen",
+      "tagline": "Coffee & Tea",
+      "footerSublabel": "Roastery & Tea House",
+      "logoType": "preset",
+      "logoPreset": "sunburst",
+      "logoUrl": "",
+      "accentColor": "#B85D2B",
+      "secondaryAccent": "#4E6B50",
+      "heroBadge": "Micro-Lot Pour-Overs & First-Harvest Uji Matcha · Earn Free Pours",
+      "heroHeadline": "Artisanal coffee & tea, rewarded with every sip you share.",
+      "heroHighlightWord": "rewarded",
+      "heroSubhead": "Small-batch single-origin espresso roasted 48 hours before pouring, paired with granite-milled Kyoto matcha and Taiwanese mountain oolong. Join the Ritual Club to collect Golden Beans, invite fellow enthusiasts, and turn daily moments into complimentary craft pours and store credit.",
+      "heroImage": "/images/hero-pour.jpg",
+      "announcementEnabled": false,
+      "announcementText": "Spring Harvest Live: First-Flush Uji Samidori Matcha & Tarrazú Honey V60 — Express Pickup Open Daily.",
+      "supportEmail": "hello@solen.cafe"
+    },
+    "availability": {
+      "mode": "open",
+      "acceptingOrders": true,
+      "prepTimeMinutes": 4,
+      "openingTime": "07:00",
+      "closingTime": "18:30",
+      "memberEarlyPickupTime": "06:30",
+      "timezoneLabel": "Local Bar Time",
+      "closedNotice": "Our espresso & tea bar is resting for fresh morning roasting. You can still browse the menu and claim your free welcome pass.",
+      "busyNotice": "High morning craft demand — baristas are pouring fresh batches (~9 min pickup).",
+      "weeklySchedule": [
+        {
+          "day": "Mon",
+          "open": "07:00",
+          "close": "18:30",
+          "isClosed": false
+        },
+        {
+          "day": "Tue",
+          "open": "07:00",
+          "close": "18:30",
+          "isClosed": false
+        },
+        {
+          "day": "Wed",
+          "open": "07:00",
+          "close": "18:30",
+          "isClosed": false
+        },
+        {
+          "day": "Thu",
+          "open": "07:00",
+          "close": "19:00",
+          "isClosed": false
+        },
+        {
+          "day": "Fri",
+          "open": "07:00",
+          "close": "19:30",
+          "isClosed": false
+        },
+        {
+          "day": "Sat",
+          "open": "07:30",
+          "close": "19:30",
+          "isClosed": false
+        },
+        {
+          "day": "Sun",
+          "open": "08:00",
+          "close": "17:30",
+          "isClosed": false
+        }
+      ]
+    },
+    "display": {
+      "activeVariant": "A",
+      "allowCustomerVariantSwitch": true,
+      "showSoldOutItems": true,
+      "showRewardsCalculator": true,
+      "showTestimonials": true,
+      "showPricing": true,
+      "showFaq": true,
+      "maxDisplayItems": 12
+    },
+    "rewards": {
+      "beansPerDollar": 10,
+      "beansForFreeDrink": 500,
+      "welcomeBonusBeans": 250,
+      "referralBonusBeans": 250,
+      "ritualPassReferralCash": 5,
+      "reserveReferralCash": 10
+    },
+    "locations": [
+      {
+        "id": "loc-sf",
+        "name": "Flagship Roastery · Hayes Valley",
+        "neighborhood": "San Francisco",
+        "address": "418 Linden St, San Francisco, CA",
+        "hours": "Daily 7:00 AM – 6:30 PM",
+        "isOpen": true
+      },
+      {
+        "id": "loc-ny",
+        "name": "Tea Bar & Annex · SoHo",
+        "neighborhood": "New York",
+        "address": "112 Crosby St, New York, NY",
+        "hours": "Daily 7:00 AM – 7:00 PM",
+        "isOpen": true
+      }
+    ],
+    "menuItems": [
+      {
+        "id": "honey-oat-cortado",
+        "name": "Velvet Honey Cortado",
+        "subtitle": "Double Ristretto · Wildflower Honey · Oat Microfoam",
+        "category": "coffee",
+        "price": 5.75,
+        "beansEarned": 60,
+        "origin": "Huila, Colombia",
+        "elevation": "1,920m",
+        "notes": [
+          "Toasted Hazelnut",
+          "Orange Blossom",
+          "Dark Cocoa"
+        ],
+        "description": "Pulled at 9 bars from our washed Pink Bourbon micro-lot, balanced with velvety house-steamed barista oat milk and raw Sierra wildflower honey.",
+        "image": "/images/espresso-velvet.jpg",
+        "badge": "House Favorite",
+        "caffeine": "High",
+        "available": true,
+        "displayed": true,
+        "featured": true,
+        "stockCount": 38,
+        "sortOrder": 1,
+        "profile": {
+          "label1": "Body",
+          "val1": 88,
+          "label2": "Sweetness",
+          "val2": 76,
+          "label3": "Acidity",
+          "val3": 54
+        }
+      },
+      {
+        "id": "uji-ceremonial-matcha",
+        "name": "First-Harvest Uji Matcha",
+        "subtitle": "Stone-Milled Tencha · Bamboo Whisked · Hot or Iced",
+        "category": "tea",
+        "price": 6.5,
+        "beansEarned": 70,
+        "origin": "Uji, Kyoto Prefecture",
+        "elevation": "Shade-Grown 28d",
+        "notes": [
+          "Sweet Umami",
+          "Pistachio Cream",
+          "Fresh Bamboo"
+        ],
+        "description": "Single-cultivar Samidori tencha hand-picked in May and slow-milled on granite wheels. Whisked to order with 78°C spring water for zero bitterness.",
+        "image": "/images/matcha-ceremonial.jpg",
+        "badge": "Ceremonial Grade",
+        "caffeine": "Medium",
+        "available": true,
+        "displayed": true,
+        "featured": true,
+        "stockCount": 24,
+        "sortOrder": 2,
+        "profile": {
+          "label1": "Umami",
+          "val1": 94,
+          "label2": "Creaminess",
+          "val2": 86,
+          "label3": "Clarity",
+          "val3": 82
+        }
+      },
+      {
+        "id": "yuzu-espresso-tonic",
+        "name": "Sparkling Yuzu Espresso Tonic",
+        "subtitle": "Ethiopian Single Origin · Botanical Tonic · Fresh Yuzu",
+        "category": "seasonal",
+        "price": 6.75,
+        "beansEarned": 75,
+        "origin": "Yirgacheffe, Ethiopia",
+        "elevation": "2,150m",
+        "notes": [
+          "Bright Yuzu",
+          "Bergamot",
+          "Caramelized Citrus"
+        ],
+        "description": "Chilled heirloom espresso floated gently over crisp artisanal quinine tonic, cold-pressed Kochi yuzu juice, and a dehydrated blood orange crown.",
+        "image": "/images/cold-brew-tonic.jpg",
+        "badge": "Limited Harvest",
+        "caffeine": "High",
+        "available": true,
+        "displayed": true,
+        "featured": true,
+        "stockCount": 16,
+        "sortOrder": 3,
+        "profile": {
+          "label1": "Brightness",
+          "val1": 95,
+          "label2": "Effervescence",
+          "val2": 90,
+          "label3": "Sweetness",
+          "val3": 68
+        }
+      },
+      {
+        "id": "alishan-oolong",
+        "name": "Alishan High Mountain Oolong",
+        "subtitle": "Gongfu Steeped · Whole Rolled Leaves · 3 Infusions",
+        "category": "tea",
+        "price": 6.25,
+        "beansEarned": 65,
+        "origin": "Chiayi County, Taiwan",
+        "elevation": "1,650m",
+        "notes": [
+          "White Orchid",
+          "Ripe Peach",
+          "Sweet Cream Finish"
+        ],
+        "description": "Lightly oxidized mountain oolong harvested above the mist line. Brewed in matte clay kyusu for aromatic floral lift and a lingering nectar sweetness.",
+        "image": "/images/oolong-tea.jpg",
+        "badge": "Single Estate",
+        "caffeine": "Low",
+        "available": true,
+        "displayed": true,
+        "featured": false,
+        "stockCount": 29,
+        "sortOrder": 4,
+        "profile": {
+          "label1": "Aroma",
+          "val1": 96,
+          "label2": "Sweetness",
+          "val2": 84,
+          "label3": "Silkiness",
+          "val3": 90
+        }
+      },
+      {
+        "id": "saffron-cardamom-chai",
+        "name": "Saffron & Green Cardamom Chai",
+        "subtitle": "Assam Second Flush · Crushed Whole Spices · Saffron",
+        "category": "seasonal",
+        "price": 6,
+        "beansEarned": 65,
+        "origin": "Assam, India & Kashmiri Saffron",
+        "elevation": "Single Garden",
+        "notes": [
+          "Crushed Cardamom",
+          "Warm Ginger",
+          "Floral Saffron"
+        ],
+        "description": "Slow-simmered for 90 minutes each morning using freshly mortared green cardamom, Ceylon cinnamon, black peppercorn, and bold malty Assam leaf.",
+        "image": "/images/chai-cardamom.jpg",
+        "badge": "Small Batch",
+        "caffeine": "Medium",
+        "available": true,
+        "displayed": true,
+        "featured": false,
+        "stockCount": 19,
+        "sortOrder": 5,
+        "profile": {
+          "label1": "Warmth",
+          "val1": 92,
+          "label2": "Body",
+          "val2": 85,
+          "label3": "Sweetness",
+          "val3": 74
+        }
+      },
+      {
+        "id": "solen-hand-pour",
+        "name": "Origin Flight V60 Pour-Over",
+        "subtitle": "Precision Bloomed · Single Micro-Lot · Rotating Weekly",
+        "category": "coffee",
+        "price": 6.5,
+        "beansEarned": 70,
+        "origin": "Tarrazú, Costa Rica",
+        "elevation": "1,850m",
+        "notes": [
+          "Apricot Jam",
+          "Jasmine Tea",
+          "Raw Cane Sugar"
+        ],
+        "description": "Honey-processed Caturra roasted 48 hours prior in our Probat drum roaster. Brewed with remineralized water at 93°C for tea-like crystalline clarity.",
+        "image": "/images/hero-pour.jpg",
+        "badge": "Roasted 48h Ago",
+        "caffeine": "High",
+        "available": true,
+        "displayed": true,
+        "featured": true,
+        "stockCount": 22,
+        "sortOrder": 6,
+        "profile": {
+          "label1": "Clarity",
+          "val1": 94,
+          "label2": "Acidity",
+          "val2": 80,
+          "label3": "Sweetness",
+          "val3": 88
+        }
+      }
+    ],
+    "testimonials": [
+      {
+        "id": "t1",
+        "name": "Claire Lin",
+        "role": "Product Designer · Ritual Pass Member",
+        "avatarInitials": "CL",
+        "avatarBg": "#4E6B50",
+        "quote": "The first-harvest Uji matcha alone ruined every other café for me. Even better—I shared my Solen link with my design team and unlocked four free drinks in my first month.",
+        "favoriteDrink": "First-Harvest Uji Matcha",
+        "earnedStat": "1,840 Golden Beans earned",
+        "rating": 5,
+        "visible": true
+      },
+      {
+        "id": "t2",
+        "name": "Marcus Vance",
+        "role": "Creative Director · Roaster’s Circle",
+        "avatarInitials": "MV",
+        "avatarBg": "#B85D2B",
+        "quote": "You can taste the 48-hour roast freshness in the Costa Rica V60. Walking in, tapping my member pass, and getting rewarded every time I bring a client makes Solen my second office.",
+        "favoriteDrink": "Origin Flight V60 Pour-Over",
+        "earnedStat": "14 free pours redeemed",
+        "rating": 5,
+        "visible": true
+      },
+      {
+        "id": "t3",
+        "name": "Amina Patel",
+        "role": "Founder & Tea Enthusiast",
+        "avatarInitials": "AP",
+        "avatarBg": "#6E5544",
+        "quote": "Most specialty coffee shops treat tea as an afterthought. Solen treats Taiwanese High Mountain Oolong with the exact same reverence as micro-lot espresso. Truly rare.",
+        "favoriteDrink": "Alishan High Mountain Oolong",
+        "earnedStat": "$65 referral credit earned",
+        "rating": 5,
+        "visible": true
+      },
+      {
+        "id": "t4",
+        "name": "Julian Brooks",
+        "role": "Software Architect · Daily Sipper",
+        "avatarInitials": "JB",
+        "avatarBg": "#2C231E",
+        "quote": "The Velvet Honey Cortado is pure velvet. Their Reach & Earn tracker is ridiculously satisfying—two referrals paid for my entire week of morning espresso.",
+        "favoriteDrink": "Velvet Honey Cortado",
+        "earnedStat": "9 friends invited",
+        "rating": 5,
+        "visible": true
+      }
+    ],
+    "pricingTiers": [
+      {
+        "id": "daily-sipper",
+        "name": "Daily Sipper",
+        "tagline": "Free forever loyalty & referral access for casual coffee & tea lovers.",
+        "monthlyPrice": 0,
+        "annualMonthlyPrice": 0,
+        "visible": true,
+        "cta": "Join Free & Get 250 Beans",
+        "beanMultiplier": "1× Beans (10 per $1)",
+        "referralBonus": "+250 Beans per friend",
+        "features": [
+          "Free welcome craft coffee or ceremonial tea",
+          "Earn 10 Golden Beans for every $1 spent",
+          "Personal Reach & Earn tasting invite link",
+          "250 bonus Beans for both you & every friend",
+          "Complimentary birthday craft beverage",
+          "Mobile order-ahead & saved flavor profile"
+        ]
+      },
+      {
+        "id": "ritual-pass",
+        "name": "Ritual Pass",
+        "tagline": "Our signature membership for daily drinkers who love sharing great pours.",
+        "monthlyPrice": 24,
+        "annualMonthlyPrice": 19,
+        "badge": "Most Popular",
+        "featured": true,
+        "visible": true,
+        "cta": "Start Ritual Pass",
+        "beanMultiplier": "2× Beans (20 per $1)",
+        "referralBonus": "$5 instant credit + 350 Beans",
+        "features": [
+          "5 signature coffees or ceremonial teas monthly",
+          "2× Golden Beans on all café & bean purchases",
+          "$5 instant store credit per friend who joins",
+          "15% off additional drinks, teas & pastries",
+          "Complimentary oat, almond & house syrups",
+          "Skip-the-line priority bar pickup"
+        ]
+      },
+      {
+        "id": "connoisseur-reserve",
+        "name": "Connoisseur Reserve",
+        "tagline": "All-access sanctuary for collectors, hosts, and top community ambassadors.",
+        "monthlyPrice": 48,
+        "annualMonthlyPrice": 39,
+        "badge": "Limited Allocation",
+        "visible": true,
+        "cta": "Claim Reserve Spot",
+        "beanMultiplier": "3× Beans (30 per $1)",
+        "referralBonus": "$10 credit + 500 Beans per friend",
+        "features": [
+          "10 specialty drinks + unlimited drip & oolong refills",
+          "Monthly 250g micro-lot coffee OR 30g Uji matcha tin",
+          "3× Golden Beans + $10 instant credit per referral",
+          "VIP invites to monthly private roastery cuppings",
+          "2 complimentary guest passes every month",
+          "Early access to rare Geisha & first-flush harvests"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "id": "faq-1",
+        "visible": true,
+        "question": "How does the Reach & Earn program actually work?",
+        "answer": "Once you join the free Ritual Club, you receive a personal tasting invite link and QR pass. Every time you order a coffee, ceremonial tea, or bag of beans, you earn Golden Beans (500 Beans = any free craft drink). When a friend claims their free welcome drink through your link, you immediately receive 250–500 Golden Beans plus up to $10 in instant store credit depending on your tier—with zero cap on earnings."
+      },
+      {
+        "id": "faq-2",
+        "visible": true,
+        "question": "Can I enjoy both specialty coffee and ceremonial tea under one membership?",
+        "answer": "Yes! Unlike traditional coffee-only subscriptions, every pass credit and Bean reward applies equally across our entire espresso bar, single-origin V60 pour-overs, granite-milled Uji ceremonial matcha, Taiwanese Gongfu oolongs, and seasonal spice infusions."
+      },
+      {
+        "id": "faq-3",
+        "visible": true,
+        "question": "How fresh are your coffee beans and tea harvests?",
+        "answer": "We roast our direct-trade micro-lots in small batches every Monday and Thursday morning—every pour-over and bag sold is rested between 48 hours and 10 days for peak aromatics. Our ceremonial matcha is air-freighted chilled directly from Uji family farms and stored nitrogen-sealed at 4°C until whisked."
+      },
+      {
+        "id": "faq-4",
+        "visible": true,
+        "question": "Do unused Ritual Pass drinks or Golden Beans expire?",
+        "answer": "Golden Beans never expire as long as you visit or redeem once within 12 months. Unused monthly Ritual Pass drink credits automatically roll over for 30 days, or you can gift an unused pour directly to a friend with one tap to earn bonus community Beans."
+      },
+      {
+        "id": "faq-5",
+        "visible": true,
+        "question": "Are plant-based milks and decaf / low-caffeine options available?",
+        "answer": "Absolutely. We craft house-made organic cashew-oat milk alongside Minor Figures oat and cold-pressed almond milk. For low- or zero-caffeine afternoons, we offer Swiss Water Process Colombian decaf espresso, roasted Kyoto hojicha, and caffeine-free mountain botanicals."
+      },
+      {
+        "id": "faq-6",
+        "visible": true,
+        "question": "Can I pause or cancel my paid Ritual Club plan anytime?",
+        "answer": "Yes—zero lock-in contracts or hidden fees. You can pause for travel, switch tiers, or downgrade back to the free Daily Sipper plan in two clicks from your member profile, keeping all your earned Golden Beans intact."
+      }
+    ],
+    "orders": [
+      {
+        "id": "ord-1001",
+        "orderNumber": "SLN-4028",
+        "customerName": "Claire Lin",
+        "customerEmail": "claire@atelier.design",
+        "storefrontOption": "A",
+        "items": [
+          {
+            "itemId": "uji-ceremonial-matcha",
+            "name": "First-Harvest Uji Matcha",
+            "price": 6.5,
+            "quantity": 1,
+            "beansEarned": 70
+          },
+          {
+            "itemId": "honey-oat-cortado",
+            "name": "Velvet Honey Cortado",
+            "price": 5.75,
+            "quantity": 1,
+            "beansEarned": 60
+          }
+        ],
+        "subtotal": 12.25,
+        "totalBeans": 130,
+        "pickupNote": "Iced matcha with oat milk, light ice",
+        "status": "brewing",
+        "createdAt": "2026-11-14T06:24:55.434Z"
+      },
+      {
+        "id": "ord-1002",
+        "orderNumber": "SLN-4027",
+        "customerName": "Marcus Vance",
+        "customerEmail": "marcus@vancecreative.co",
+        "storefrontOption": "B",
+        "items": [
+          {
+            "itemId": "solen-hand-pour",
+            "name": "Origin Flight V60 Pour-Over",
+            "price": 6.5,
+            "quantity": 2,
+            "beansEarned": 70
+          }
+        ],
+        "subtotal": 13,
+        "totalBeans": 140,
+        "pickupNote": "Express counter pickup",
+        "status": "ready",
+        "createdAt": "2026-11-14T06:08:55.434Z"
+      }
+    ],
+    "members": [
+      {
+        "id": "mem-1",
+        "name": "Claire Lin",
+        "email": "claire@atelier.design",
+        "plan": "Ritual Pass ($19/mo)",
+        "preferredDrink": "First-Harvest Uji Matcha",
+        "beansBalance": 1840,
+        "referralCode": "claire-ritual",
+        "referralsCount": 6,
+        "storefrontOption": "A",
+        "joinedAt": "2026-10-27T06:32:55.434Z"
+      },
+      {
+        "id": "mem-2",
+        "name": "Marcus Vance",
+        "email": "marcus@vancecreative.co",
+        "plan": "Connoisseur Reserve ($39/mo)",
+        "preferredDrink": "Origin Flight V60 Pour-Over",
+        "beansBalance": 3260,
+        "referralCode": "marcus-roast",
+        "referralsCount": 11,
+        "storefrontOption": "B",
+        "joinedAt": "2026-10-13T06:32:55.434Z"
+      },
+      {
+        "id": "mem-3",
+        "name": "Amina Patel",
+        "email": "amina@tea-notes.io",
+        "plan": "Daily Sipper (Free)",
+        "preferredDrink": "Alishan High Mountain Oolong",
+        "beansBalance": 740,
+        "referralCode": "amina-oolong",
+        "referralsCount": 3,
+        "storefrontOption": "A",
+        "joinedAt": "2026-11-08T06:32:55.434Z"
+      }
+    ],
+    "updatedAt": "2026-11-14T06:32:55.434Z"
+  }
+}

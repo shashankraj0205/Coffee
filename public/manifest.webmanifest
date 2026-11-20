@@ -1,0 +1,19 @@
+{
+  "name": "Kulhad & Kaapi — Indian Chai & Coffee Café",
+  "short_name": "Kulhad & Kaapi",
+  "description": "India's Favourite Chai & Coffee Destination. Order authentic Kulhad Chai, Masala Chai, Tandoori Chai & South Indian Filter Coffee.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9F0",
+  "theme_color": "#3B2418",
+  "orientation": "portrait-primary",
+  "categories": ["food", "shopping"],
+  "icons": [
+    {
+      "src": "/images/indian-hero-chai-kaapi.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

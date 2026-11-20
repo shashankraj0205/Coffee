@@ -1,0 +1,266 @@
+// Prisma PostgreSQL Schema for Kulhad & Kaapi Indian Tea & Coffee Café
+// Mirrors server/migrations/001_initial_schema.sql for seamless cloud PostgreSQL deployment
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  customer
+  staff
+  owner
+}
+
+enum BeverageCategory {
+  tea
+  coffee
+}
+
+enum OrderType {
+  pickup
+  delivery
+  dine_in
+}
+
+enum OrderStatus {
+  order_placed
+  order_accepted
+  preparing
+  ready_for_pickup
+  out_for_delivery
+  delivered
+  cancelled
+}
+
+enum PaymentStatus {
+  pending
+  paid
+  failed
+  refunded
+}
+
+model User {
+  id                  String               @id @default(cuid())
+  name                String
+  email               String               @unique
+  phone               String?
+  passwordHash        String
+  role                Role                 @default(customer)
+  emailVerified       Boolean              @default(false)
+  birthday            String?
+  loyaltyPoints       Int                  @default(0)
+  membershipLevel     String               @default("Daily Tapri Club")
+  referralCode        String               @unique
+  referralsCount      Int                  @default(0)
+  preferredDrink      String               @default("Masala Chai")
+  active              Boolean              @default(true)
+  createdAt           DateTime             @default(now())
+  addresses           Address[]
+  orders              Order[]
+  reviews             Review[]
+  loyaltyTransactions LoyaltyTransaction[]
+  cartItems           CartItem[]
+}
+
+model Address {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  label         String   @default("Home")
+  recipientName String
+  phone         String
+  line1         String
+  landmark      String?
+  city          String   @default("Bengaluru")
+  pincode       String
+  isDefault     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}
+
+model Product {
+  id               String           @id
+  name             String
+  hindiName        String?
+  subtitle         String
+  servingStyle     String?
+  category         BeverageCategory
+  price            Int
+  beansEarned      Int              @default(30)
+  origin           String           @default("India")
+  description      String?
+  image            String
+  badge            String?
+  caffeine         String           @default("Medium")
+  supportsHot      Boolean          @default(true)
+  supportsCold     Boolean          @default(false)
+  isBestseller     Boolean          @default(false)
+  isNewArrival     Boolean          @default(false)
+  ratingAvg        Float            @default(4.8)
+  reviewCount      Int              @default(0)
+  available        Boolean          @default(true)
+  displayed        Boolean          @default(true)
+  featured         Boolean          @default(false)
+  stockCount       Int              @default(50)
+  sortOrder        Int              @default(1)
+  reviews          Review[]
+  cartItems        CartItem[]
+  updatedAt        DateTime         @updatedAt
+}
+
+model Ingredient {
+  id                String         @id
+  name              String         @unique
+  unit              String
+  stockQty          Float          @default(0)
+  lowStockThreshold Float          @default(100)
+  costPerUnit       Float          @default(0)
+  logs              InventoryLog[]
+  updatedAt         DateTime       @updatedAt
+}
+
+model InventoryLog {
+  id           String     @id @default(cuid())
+  ingredientId String
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Cascade)
+  changeQty    Float
+  reason       String
+  orderId      String?
+  createdBy    String     @default("system")
+  createdAt    DateTime   @default(now())
+}
+
+model CartItem {
+  id                  String  @id @default(cuid())
+  userId              String
+  user                User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId           String
+  product             Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity            Int     @default(1)
+  size                String  @default("Medium")
+  temperature         String  @default("hot")
+  sugarPreference     String  @default("Regular Sugar")
+  milkStrength        String  @default("Standard")
+  specialInstructions String?
+}
+
+model Coupon {
+  id             String    @id @default(cuid())
+  code           String    @unique
+  title          String
+  description    String?
+  discountType   String
+  discountValue  Float
+  minOrderValue  Int       @default(0)
+  maxDiscount    Int       @default(0)
+  firstOrderOnly Boolean   @default(false)
+  singleUse      Boolean   @default(false)
+  isFestival     Boolean   @default(false)
+  expiresAt      DateTime?
+  usageLimit     Int       @default(0)
+  timesUsed      Int       @default(0)
+  active         Boolean   @default(true)
+  createdAt      DateTime  @default(now())
+}
+
+model Order {
+  id                    String        @id @default(cuid())
+  orderNumber           String        @unique
+  userId                String?
+  user                  User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  customerName          String
+  customerEmail         String?
+  customerPhone         String?
+  orderType             OrderType     @default(pickup)
+  tableNumber           String?
+  scheduledFor          String?
+  pickupNote            String?
+  subtotal              Float
+  discountAmount        Float         @default(0)
+  couponCode            String?
+  loyaltyRedeemedPoints Int           @default(0)
+  loyaltyDiscount       Float         @default(0)
+  taxAmount             Float         @default(0)
+  deliveryFee           Float         @default(0)
+  totalPayable          Float
+  totalBeans            Int           @default(0)
+  paymentMethod         String        @default("cod")
+  paymentStatus         PaymentStatus @default(pending)
+  status                OrderStatus   @default(order_placed)
+  items                 OrderItem[]
+  payments              Payment[]
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+}
+
+model OrderItem {
+  id                  String  @id @default(cuid())
+  orderId             String
+  order               Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId           String
+  name                String
+  category            String
+  size                String  @default("Medium")
+  temperature         String  @default("hot")
+  sugarPreference     String  @default("Regular Sugar")
+  milkStrength        String  @default("Standard")
+  specialInstructions String?
+  unitPrice           Float
+  quantity            Int
+  beansEarned         Int     @default(0)
+}
+
+model Payment {
+  id               String   @id @default(cuid())
+  orderId          String
+  order            Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  gateway          String   @default("razorpay_sandbox")
+  gatewayOrderId   String?  @unique
+  gatewayPaymentId String?  @unique
+  method           String   @default("upi")
+  amount           Float
+  currency         String   @default("INR")
+  status           String   @default("created")
+  refundId         String?
+  refundAmount     Float    @default(0)
+  mode             String   @default("sandbox")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Review {
+  id               String   @id @default(cuid())
+  productId        String
+  product          Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId           String?
+  user             User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userName         String
+  rating           Int
+  comment          String
+  verifiedPurchase Boolean  @default(false)
+  status           String   @default("approved")
+  adminReply       String?
+  reported         Boolean  @default(false)
+  createdAt        DateTime @default(now())
+}
+
+model LoyaltyTransaction {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orderId     String?
+  pointsDelta Int
+  type        String
+  description String
+  createdAt   DateTime @default(now())
+}
+
+model StoreSetting {
+  key       String   @id
+  valueJson String
+  updatedAt DateTime @updatedAt
+}
