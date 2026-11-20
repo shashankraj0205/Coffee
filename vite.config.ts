@@ -11,6 +11,8 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), viteSingleFile()],
+  // Dev: the app calls `${origin}/api`, so forward it to the Express backend.
+  server: { proxy: { "/api": "http://localhost:4000" } },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
